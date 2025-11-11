@@ -1,17 +1,17 @@
 import React from "react";
-import products from './data/products.json'
+import products from "./data/products.json";
 import "./ShopAll.css";
 
-export default function ShopAll(){
-    const allProducts=products.categories.flatMap(cat => cat.products);
-    const totalCount=allProducts.length;
+export default function ShopAll() {
+  const allProducts = products.categories.flatMap((cat) => cat.products);
+  const totalCount = allProducts.length;
 
-    return(
+  return (
     <div className="shopall-page">
       <h2>All Products</h2>
       <h3>{totalCount} Products</h3>
       <div className="product-grid">
-        {allProducts.map(product => (
+        {allProducts.map((product) => (
           <div className="imgbox" key={product.id}>
             <img src={product.image} alt={product.name} />
             {product.bestseller === "y" && (

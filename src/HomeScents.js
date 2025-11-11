@@ -1,20 +1,20 @@
 import React from "react";
-import products from './data/products.json'
+import products from "./data/products.json";
 import "./HomeScents.css";
 
-export default function Scents(){
-    const scentsCategory=products.categories.find(
-        (cat)=>cat.name==="Home scents"
-    );
-    const scentsProducts=scentsCategory?scentsCategory.products:[];
-    const totalCount=scentsProducts.length;
+export default function Scents() {
+  const scentsCategory = products.categories.find(
+    (cat) => cat.name === "Home scents"
+  );
+  const scentsProducts = scentsCategory ? scentsCategory.products : [];
+  const totalCount = scentsProducts.length;
 
-    return(
+  return (
     <div className="scents-page">
       <h2>Home Scents</h2>
       <h3>{totalCount} Products</h3>
       <div className="product-grid">
-        {scentsProducts.map(product => (
+        {scentsProducts.map((product) => (
           <div className="imgbox" key={product.id}>
             <img src={product.image} alt={product.name} />
             {product.bestseller === "y" && (

@@ -140,9 +140,9 @@ body {
   font-weight: 600;
 }
 
-@media (max-width:1440px){
-  .imgbox img{
-    width:100%;
+@media (max-width: 1440px) {
+  .imgbox img {
+    width: 100%;
   }
 }
 
@@ -206,9 +206,9 @@ body {
     height: 400px;
   }
   .bestsellers {
-    height:20px;
-    gap:10px;
-    padding:20px 5px;
+    height: 20px;
+    gap: 10px;
+    padding: 20px 5px;
   }
   .bestsellers h4 {
     font-size: 20px;
@@ -219,12 +219,16 @@ body {
     cursor: pointer;
     padding-right: 0;
   }
-  .tabs a:not(:first-child) {display: none;}
+  .tabs a:not(:first-child) {
+    display: none;
+  }
   .tabs a.icon {
     float: right;
     display: block;
   }
-  .tabs.responsive {position: relative;}
+  .tabs.responsive {
+    position: relative;
+  }
   .tabs.responsive .icon {
     position: absolute;
     right: 0;
@@ -236,7 +240,7 @@ body {
     text-align: left;
   }
   .tabs a {
-    border-right: none;  
+    border-right: none;
   }
   .catalogueimages {
     flex-wrap: wrap;

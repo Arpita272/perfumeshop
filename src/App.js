@@ -1,5 +1,5 @@
 import "./App.css";
-import products from './data/products.json'
+import products from "./data/products.json";
 
 export default function App() {
   return (
@@ -26,16 +26,19 @@ export default function App() {
 
       <div className="catalogue">
         <div className="catalogueimages">
-      {products.categories.flatMap(category=>category.products).filter(product=>product.bestseller==="y").map(product=>(
-        <div className="imgbox" key={product.id}>
-            <img src={product.image} alt={product.name} />
-            <span className="label">Best Seller</span>
-            <p className="desc">{product.name}</p>
-            <p className="rate">{product.price}</p>
-          </div>
-      ))}
+          {products.categories
+            .flatMap((category) => category.products)
+            .filter((product) => product.bestseller === "y")
+            .map((product) => (
+              <div className="imgbox" key={product.id}>
+                <img src={product.image} alt={product.name} />
+                <span className="label">Best Seller</span>
+                <p className="desc">{product.name}</p>
+                <p className="rate">{product.price}</p>
+              </div>
+            ))}
         </div>
-       </div>
+      </div>
     </>
   );
 }

@@ -1,20 +1,18 @@
 import React from "react";
-import products from './data/products.json'
+import products from "./data/products.json";
 import "./Body.css";
 
-export default function Body(){
-    const bodyCategory=products.categories.find(
-        (cat)=>cat.name==="Body"
-    );
-    const bodyProducts=bodyCategory?bodyCategory.products:[];
-    const totalCount=bodyProducts.length;
+export default function Body() {
+  const bodyCategory = products.categories.find((cat) => cat.name === "Body");
+  const bodyProducts = bodyCategory ? bodyCategory.products : [];
+  const totalCount = bodyProducts.length;
 
-    return(
+  return (
     <div className="body-page">
       <h2>Body</h2>
       <h3>{totalCount} Products</h3>
       <div className="product-grid">
-        {bodyProducts.map(product => (
+        {bodyProducts.map((product) => (
           <div className="imgbox" key={product.id}>
             <img src={product.image} alt={product.name} />
             {product.bestseller === "y" && (
