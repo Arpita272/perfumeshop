@@ -1,0 +1,20 @@
+.scents-page {
+  font-family: Optima, sans-serif;
+  margin: 40px;
+  padding: 0;
+}
+.scents-page h2 {
+  text-align: center;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.imgbox img {
+  width: 500px;
+  height: 500px;
+}
+.imgbox span {
+  font-weight: bold;
+}

@@ -1,0 +1,88 @@
+{
+   "categories":[
+    {
+        "id":1,
+        "name":"Body",
+        "products":[
+            {
+                "id":101,
+                "name":"BLACK BERRY, 100 ml/Body Lotion",
+                "price":"£20",
+                "bestseller":"n",
+                "image": "/productimages/blackberry.avif"
+            },
+            {
+                "id":102,
+                "name":"NOMAD 13, 100 ml/Eau De Parfum",
+                "price":"£30",
+                "bestseller":"n",
+                "image": "/productimages/nomad.avif"
+            },
+            {
+                "id":103,
+                "name":"TRAVEL TUBE FRAGANCE SET, 10 ml / o.33 oz",
+                "price":"£50",
+                "bestseller":"n",
+                "image":"/productimages/travel.avif"
+            },
+            {
+                "id":104,
+                "name":"HONEY KISS, 100 ml/Body Lotion",
+                "price":"£20",
+                "image": "/productimages/honeykiss.avif",
+                "bestseller":"y"
+            },
+            {
+                "id":105,
+                "name":"JASMINE BREEZE, 100 ml/Eau De Parfum",
+                "price":"£25",
+                "bestseller":"y",
+                "image": "/productimages/jasminebreeze.avif"
+            }
+        ]
+    },
+    {
+        "id":2,
+        "name":"Home scents",
+        "products":[
+            {
+                 "id":201,
+                "name":"HOME SCENT OIL, Home Fragrance Oil, 30 ml/ 1oz",
+                "price":"£20",
+                "bestseller":"n",
+                "image": "/productimages/rivera.avif"
+            },
+            {
+                "id":202,
+                "name":"SANDALWOOD BLEND, Candle 250 g/ 8.6 oz",
+                "price":"£15",
+                "bestseller":"n",
+                "image": "/productimages/sandalwood.avif"
+            },
+            {
+                "id":203,
+                "name":"LAVENDER FIELDS, 100 ml/ Home Fragrance",
+                "price":"£25",
+                "image": "/productimages/lavenderfields.avif",
+                "bestseller":"y"
+            },
+            {
+                "id":204,
+                "name":"AQUATIC DREAM, 100 ml/ Home Fragrance",
+                "price":"£20",
+                "bestseller":"n",
+                "image":"/productimages/aquatic.avif"
+            },
+            {
+                "id":205,
+                "name":"CITRUS GARDEN, Candle 250 g/ 8.6 oz",
+                "price":"£30",
+                "image": "/productimages/citrusgarden.avif",
+                "bestseller":"y"
+            }
+
+        ]
+    }
+   ]
+}
+
