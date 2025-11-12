@@ -8,6 +8,7 @@ import ShopAll from "./ShopAll";
 import Body from "./Body";
 import Scents from "./HomeScents";
 import TopNav from "./TopNav";
+import ProductDetails from "./ProductDetails";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -19,6 +20,7 @@ root.render(
           <Route path="/shop-all" element={<ShopAll />} />
           <Route path="/body-page" element={<Body />} />
           <Route path="/scents-page" element={<Scents />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
         </Route>
       </Routes>
     </BrowserRouter>

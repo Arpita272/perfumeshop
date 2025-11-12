@@ -18,3 +18,7 @@
 .imgbox span {
   font-weight: bold;
 }
+.imgbox {
+  text-decoration: none;
+  color: black;
+}

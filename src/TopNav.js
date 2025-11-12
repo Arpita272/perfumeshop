@@ -14,9 +14,9 @@ export default function TopNav() {
         <p>FREE SHIPPING OVER £50 WORLDWIDE</p>
       </div>
       <div className={`tabs ${menuOpen ? "responsive" : ""}`} id="myTabs">
-        <a href="#maintab" className="maintab">
+        <Link to="/" className="maintab">
           NOUS DEUX FRAGRANCES
-        </a>
+        </Link>
         <Link to="/shop-all" className="subtab">
           SHOP ALL
         </Link>
