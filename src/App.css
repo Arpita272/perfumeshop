@@ -32,18 +32,13 @@ body {
 .subtab {
   font-weight: bold;
 }
-
-.tabs i.fa-cart-shopping,
-.tabs i.fa-circle-user {
+.iconmenu {
   float: right;
   padding: 14px 10px;
-  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
 }
-
-.tabs a.icon {
-  display: none;
-}
-
 .body1 {
   width: 100%;
   display: flex;
@@ -102,11 +97,10 @@ body {
 }
 
 .viewmore {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 16px;
-  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-size: large;
+  font-weight: bold;
 }
 
 .viewmore:hover {
@@ -248,10 +242,4 @@ body {
   .imgbox {
     width: 100%;
   }
-}
-.viewmore {
-  text-decoration: none;
-  color: black;
-  font-size: large;
-  font-weight: bold;
 }

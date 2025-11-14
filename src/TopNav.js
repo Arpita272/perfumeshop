@@ -1,6 +1,9 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useState } from "react";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export default function TopNav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,11 +29,10 @@ export default function TopNav() {
         <Link to="/scents-page" className="subtab">
           Home Scents
         </Link>
-        <i className="fa-solid fa-cart-shopping fa-lg"></i>
-        <i className="fa-solid fa-circle-user fa-lg"></i>
-        <a href="#!" className="icon" onClick={toggleMenu}>
-          <i className="fa fa-bars"></i>
-        </a>
+        <div className="iconmenu">
+          <ShoppingCartIcon />
+          <AccountCircleIcon />
+        </div>
       </div>
       <Outlet />
     </>
