@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import products from "./data/products.json";
 import "./ProductDetails.css";
 
 export default function ProductDetails() {
   const { id } = useParams();
-  const allProducts = products.categories.flatMap((cat) => cat.products);
+  const allProducts = products.categories.flatMap((cat) =>
+    cat.products.map((p) => ({ ...p, category: cat.name }))
+  );
   const product = allProducts.find((p) => p.id.toString() === id);
 
   const [openSections, setOpenSections] = useState({});
@@ -21,10 +23,19 @@ export default function ProductDetails() {
   const increaseQty = () => setQuantity(quantity + 1);
   const decreaseQty = () => setQuantity(quantity > 1 ? quantity - 1 : 1);
 
+  const location = useLocation();
+  const fromPage = location.state?.from || "shop-all";
+
+  const backLinkRoutes = {
+    "shop-all": "/shop-all",
+    "body-page": "/body-page",
+    "scents-page": "/scents-page",
+  };
+
   return (
     <div className="product-details">
-      <Link to="/shop-all" className="back-link">
-        ← Back to Shop All
+      <Link to={backLinkRoutes[fromPage]} className="back-link">
+        ← Back
       </Link>
       <div className="details-container">
         <img src={product.image} alt={product.name} />

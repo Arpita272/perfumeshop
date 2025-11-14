@@ -1,5 +1,6 @@
 import "./App.css";
 import products from "./data/products.json";
+import { Link } from "react-router-dom";
 
 export default function App() {
   return (
@@ -8,7 +9,9 @@ export default function App() {
         <div className="text">
           <p className="title">NOMAD 13 EAU DE PARFUM</p>
           <p className="des">Discover the original fragrance</p>
-          <button>Shop now</button>
+          <Link to="/shop-all">
+            <button>Shop now</button>
+          </Link>
         </div>
 
         <div className="mainimage">
@@ -19,7 +22,9 @@ export default function App() {
       <div className="bestsellers">
         <h4>BEST SELLERS</h4>
         <div className="viewmore">
-          <p>View More</p>
+          <Link to="/shop-all" className="viewmore">
+            <p>View More →</p>
+          </Link>
           <i className="fa-solid fa-arrow-right"></i>
         </div>
       </div>
@@ -30,12 +35,16 @@ export default function App() {
             .flatMap((category) => category.products)
             .filter((product) => product.bestseller === "y")
             .map((product) => (
-              <div className="imgbox" key={product.id}>
+              <Link
+                className="imgbox"
+                key={product.id}
+                to={`/product/${product.id}`}
+              >
                 <img src={product.image} alt={product.name} />
                 <span className="label">Best Seller</span>
                 <p className="desc">{product.name}</p>
                 <p className="rate">{product.price}</p>
-              </div>
+              </Link>
             ))}
         </div>
       </div>

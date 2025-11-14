@@ -249,3 +249,9 @@ body {
     width: 100%;
   }
 }
+.viewmore {
+  text-decoration: none;
+  color: black;
+  font-size: large;
+  font-weight: bold;
+}

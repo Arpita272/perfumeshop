@@ -10,6 +10,9 @@ export default function ShopAll() {
   return (
     <div className="shopall-page">
       <h2>All Products</h2>
+      <Link to="/" className="back">
+        ← Back
+      </Link>
       <h3>{totalCount} Products</h3>
       <div className="product-grid">
         {allProducts.map((product) => (
@@ -17,6 +20,7 @@ export default function ShopAll() {
             to={`/product/${product.id}`}
             key={product.id}
             className="imgbox"
+            state={{ from: "shop-all" }}
           >
             <img src={product.image} alt={product.name} />
             {product.bestseller === "y" && (
