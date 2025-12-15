@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { useParams, Link, useLocation } from "react-router-dom";
+import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
 import products from "./data/products.json";
 import "./ProductDetails.css";
+import { useDispatch } from "react-redux";
+import { addToCart } from "./store/cartSlice";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -32,6 +34,22 @@ export default function ProductDetails() {
     "scents-page": "/scents-page",
   };
 
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const handleAddtoCart = () => {
+    dispatch(
+      addToCart({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        quantity: quantity,
+        category: product.category,
+      })
+    );
+    navigate("/cart");
+  };
+
   return (
     <div className="product-details">
       <Link to={backLinkRoutes[fromPage]} className="back-link">
@@ -54,7 +72,9 @@ export default function ProductDetails() {
             <button onClick={increaseQty}>+</button>
           </div>
           <div className="buying">
-            <button className="addcart">Add to Cart</button>
+            <button className="addcart" onClick={handleAddtoCart}>
+              Add to Cart
+            </button>
             <button className="buynow">Buy Now</button>
           </div>
           <button

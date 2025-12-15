@@ -9,21 +9,27 @@ import Body from "./Body";
 import Scents from "./HomeScents";
 import TopNav from "./TopNav";
 import ProductDetails from "./ProductDetails";
+import Cart from "./Cart";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route element={<TopNav />}>
-          <Route path="/" element={<App />} />
-          <Route path="/shop-all" element={<ShopAll />} />
-          <Route path="/body-page" element={<Body />} />
-          <Route path="/scents-page" element={<Scents />} />
-          <Route path="/product/:id" element={<ProductDetails />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<TopNav />}>
+            <Route path="/" element={<App />} />
+            <Route path="/shop-all" element={<ShopAll />} />
+            <Route path="/body-page" element={<Body />} />
+            <Route path="/scents-page" element={<Scents />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
+            <Route path="/cart" element={<Cart />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
