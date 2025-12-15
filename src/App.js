@@ -7,7 +7,7 @@ export default function App() {
     <>
       <div className="body1">
         <div className="text">
-          <p className="title">NOMAD 13 EAU DE PARFUM</p>
+          <p className="title1">NOMAD 13 EAU DE PARFUM</p>
           <p className="des">Discover the original fragrance</p>
           <Link to="/shop-all">
             <button>Shop now</button>
