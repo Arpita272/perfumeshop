@@ -4,6 +4,7 @@ import products from "./data/products.json";
 import "./ProductDetails.css";
 import { useDispatch } from "react-redux";
 import { addToCart } from "./store/cartSlice";
+import Cart from "./Cart";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -21,6 +22,7 @@ export default function ProductDetails() {
     }));
   };
 
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const increaseQty = () => setQuantity(quantity + 1);
   const decreaseQty = () => setQuantity(quantity > 1 ? quantity - 1 : 1);
@@ -47,7 +49,7 @@ export default function ProductDetails() {
         category: product.category,
       })
     );
-    navigate("/cart");
+    setIsCartOpen(true);
   };
 
   return (
@@ -132,6 +134,7 @@ export default function ProductDetails() {
           )}
         </div>
       </div>
+      <Cart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </div>
   );
 }
