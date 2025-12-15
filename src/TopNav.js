@@ -4,12 +4,14 @@ import { useState } from "react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
+import Cart from "./Cart";
 
 export default function TopNav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
     <>
@@ -30,10 +32,14 @@ export default function TopNav() {
           Home Scents
         </Link>
         <div className="iconmenu">
-          <ShoppingCartIcon />
+          <ShoppingCartIcon
+            style={{ cursor: "pointer" }}
+            onClick={() => setIsCartOpen(true)}
+          />
           <AccountCircleIcon />
         </div>
       </div>
+      <Cart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
       <Outlet />
     </>
   );

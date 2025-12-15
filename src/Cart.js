@@ -44,7 +44,10 @@ export default function Cart({ isOpen, onClose }) {
           ))}
         </div>
         <div className="total">
-          <p>Estimated Total: £{total.toFixed(2)}</p>
+          <div className="totaltest">
+            <p>Estimated Total</p>
+            <p>£{total.toFixed(2)}</p>
+          </div>
           <button className="checkout">Checkout</button>
         </div>
       </div>
