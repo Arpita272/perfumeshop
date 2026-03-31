@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
-import products from "./data/products.json";
 import "./ProductDetails.css";
 import { useDispatch } from "react-redux";
 import { addToCart } from "./store/cartSlice";
 import Cart from "./Cart";
+import { useProducts } from "./useProducts";
 
 export default function ProductDetails() {
   const { id } = useParams();
-  const allProducts = products.categories.flatMap((cat) =>
-    cat.products.map((p) => ({ ...p, category: cat.name }))
-  );
-  const product = allProducts.find((p) => p.id.toString() === id);
+  const products = useProducts();
+  const product = products.find((p) => p.product_id.toString() === id);
 
   const [openSections, setOpenSections] = useState({});
 
@@ -41,16 +39,20 @@ export default function ProductDetails() {
   const handleAddtoCart = () => {
     dispatch(
       addToCart({
-        id: product.id,
-        name: product.name,
+        id: product.product_id,
+        name: product.product_namename,
         price: product.price,
         image: product.image,
         quantity: quantity,
-        category: product.category,
-      })
+        category: product.category_name,
+      }),
     );
     setIsCartOpen(true);
   };
+
+  if (!product) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div className="product-details">
@@ -58,10 +60,10 @@ export default function ProductDetails() {
         ← Back
       </Link>
       <div className="details-container">
-        <img src={product.image} alt={product.name} />
+        <img src={product.image} alt={product.product_name} />
         <div className="details-info">
-          <h2>{product.name}</h2>
-          <p className="price">{product.price}</p>
+          <h2>{product.product_name}</h2>
+          <p className="price">£{product.price}</p>
           <p className="description">
             I'm a product description. I'm a great place to add more details
             about your product such as sizing, material, care instructions and

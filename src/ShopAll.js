@@ -1,11 +1,11 @@
 import React from "react";
-import products from "./data/products.json";
 import "./ShopAll.css";
 import { Link } from "react-router-dom";
+import { useProducts } from "./useProducts";
 
 export default function ShopAll() {
-  const allProducts = products.categories.flatMap((cat) => cat.products);
-  const totalCount = allProducts.length;
+  const products = useProducts();
+  const totalCount = products.length;
 
   return (
     <div className="shopall-page">
@@ -15,19 +15,19 @@ export default function ShopAll() {
       </Link>
       <h3>{totalCount} Products</h3>
       <div className="product-grid">
-        {allProducts.map((product) => (
+        {products.map((product) => (
           <Link
-            to={`/product/${product.id}`}
-            key={product.id}
+            to={`/product/${product.product_id}`}
+            key={product.product_id}
             className="imgbox"
             state={{ from: "shop-all" }}
           >
-            <img src={product.image} alt={product.name} />
+            <img src={product.image} alt={product.product_name} />
             {product.bestseller === "y" && (
               <span className="label">Best Seller</span>
             )}
-            <p className="desc">{product.name}</p>
-            <p className="rate">{product.price}</p>
+            <p className="desc">{product.product_name}</p>
+            <p className="rate">£{product.price}</p>
           </Link>
         ))}
       </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import products from "./data/products.json";
 import "./HomeScents.css";
 import { Link } from "react-router-dom";
 import { useProducts } from "./useProducts";
@@ -22,16 +21,16 @@ export default function Scents() {
         {scentsProducts.map((product) => (
           <Link
             className="imgbox"
-            key={product.id}
-            to={`/product/${product.id}`}
+            key={product.product_id}
+            to={`/product/${product.product_id}`}
             state={{ from: "scents-page" }}
           >
-            <img src={product.image} alt={product.name} />
+            <img src={product.image} alt={product.product_name} />
             {product.bestseller === "y" && (
               <span className="label">Best Seller</span>
             )}
-            <p className="desc">{product.name}</p>
-            <p className="rate">{product.price}</p>
+            <p className="desc">{product.product_name}</p>
+            <p className="rate">£{product.price}</p>
           </Link>
         ))}
       </div>

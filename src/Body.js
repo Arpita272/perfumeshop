@@ -21,16 +21,16 @@ export default function Body() {
         {bodyProducts.map((product) => (
           <Link
             className="imgbox"
-            to={`/product/${product.id}`}
-            key={product.id}
+            to={`/product/${product.product_id}`}
+            key={product.product_id}
             state={{ from: "body-page" }}
           >
-            <img src={product.image} alt={product.name} />
+            <img src={product.image} alt={product.product_name} />
             {product.bestseller === "y" && (
               <span className="label">Best Seller</span>
             )}
-            <p className="desc">{product.name}</p>
-            <p className="rate">{product.price}</p>
+            <p className="desc">{product.product_name}</p>
+            <p className="rate">£{product.price}</p>
           </Link>
         ))}
       </div>

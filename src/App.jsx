@@ -38,8 +38,8 @@ export default function App() {
             .map((product) => (
               <Link
                 className="imgbox"
-                key={product.id}
-                to={`/product/${product.id}`}
+                key={product.product_id}
+                to={`/product/${product.product_id}`}
               >
                 <img src={product.image} alt={product.name} />
                 <span className="label">Best Seller</span>
