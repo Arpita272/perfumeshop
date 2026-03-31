@@ -1,11 +1,13 @@
 import React from "react";
-import products from "./data/products.json";
 import "./Body.css";
 import { Link } from "react-router-dom";
+import { useProducts } from "./useProducts";
 
 export default function Body() {
-  const bodyCategory = products.categories.find((cat) => cat.name === "Body");
-  const bodyProducts = bodyCategory ? bodyCategory.products : [];
+  const products = useProducts();
+  const bodyProducts = products.filter(
+    (product) => product.category_name === "Body",
+  );
   const totalCount = bodyProducts.length;
 
   return (

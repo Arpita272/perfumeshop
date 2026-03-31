@@ -1,8 +1,10 @@
 import "./App.css";
-import products from "./data/products.json";
 import { Link } from "react-router-dom";
+import { useProducts } from "./useProducts";
 
 export default function App() {
+  const products=useProducts();
+  
   return (
     <>
       <div className="body1">
@@ -31,9 +33,8 @@ export default function App() {
 
       <div className="catalogue">
         <div className="catalogueimages">
-          {products.categories
-            .flatMap((category) => category.products)
-            .filter((product) => product.bestseller === "y")
+          {products
+            .filter((product) => product.bestseller)
             .map((product) => (
               <Link
                 className="imgbox"
@@ -42,8 +43,8 @@ export default function App() {
               >
                 <img src={product.image} alt={product.name} />
                 <span className="label">Best Seller</span>
-                <p className="desc">{product.name}</p>
-                <p className="rate">{product.price}</p>
+                <p className="desc">{product.product_name}</p>
+                <p className="rate">£{product.price}</p>
               </Link>
             ))}
         </div>

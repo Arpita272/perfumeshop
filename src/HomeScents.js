@@ -2,12 +2,13 @@ import React from "react";
 import products from "./data/products.json";
 import "./HomeScents.css";
 import { Link } from "react-router-dom";
+import { useProducts } from "./useProducts";
 
 export default function Scents() {
-  const scentsCategory = products.categories.find(
-    (cat) => cat.name === "Home scents"
+  const products = useProducts();
+  const scentsProducts = products.filter(
+    (product) => product.category_name === "Home scents",
   );
-  const scentsProducts = scentsCategory ? scentsCategory.products : [];
   const totalCount = scentsProducts.length;
 
   return (
