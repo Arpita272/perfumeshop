@@ -2,23 +2,25 @@
   font-family: Optima, sans-serif;
   margin: 40px;
   padding: 0;
-}
-.body-page h2 {
-  text-align: center;
+  h2 {
+    text-align: center;
+  }
 }
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
 }
-.imgbox img {
-  width: 500px;
-  height: 500px;
+.imgbox {
+  img {
+    width: 500px;
+    height: 500px;
+  }
+  span {
+    font-weight: bold;
+  }
 }
-.imgbox span {
-  font-weight: bold;
-}
-.back {
+.imgbox .back {
   text-decoration: none;
   color: black;
   font-size: large;

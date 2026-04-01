@@ -1,0 +1,260 @@
+$font-main: Optima, sans-serif;
+$color-black: black;
+$color-white: white;
+$color-bg-light: #f2f2f2;
+$color-tab: #d6ccc2;
+
+$break-lg: 1440px;
+$break-md: 1024px;
+$break-sm: 768px;
+$break-xs: 425px;
+
+@mixin flex-center($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin button-style($width: 200px) {
+  background-color: $color-black;
+  color: $color-white;
+  height: 40px;
+  width: $width;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+@mixin responsive($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+// GLOBAL
+body {
+  font-family: $font-main;
+  margin: 0;
+  padding: 0;
+}
+
+// HEADER
+.shippingtext {
+  background-color: $color-black;
+  color: $color-white;
+  text-align: center;
+  line-height: 20px;
+  height: 20px;
+  width: 100%;
+  font-weight: 700;
+}
+
+// NAVIGATION
+.tabs {
+  background-color: $color-tab;
+  overflow: hidden;
+
+  a {
+    float: left;
+    color: $color-black;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-right: 1px solid $color-black;
+
+    &.icon {
+      display: none;
+    }
+
+    &:not(:first-child) {
+      @include responsive($break-xs) {
+        display: none;
+      }
+    }
+  }
+
+  &.responsive {
+    position: relative;
+
+    .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+}
+
+.subtab {
+  font-weight: bold;
+}
+
+.iconmenu {
+  float: right;
+  padding: 14px 10px;
+  display: flex;
+  gap: 15px;
+}
+
+// HERO SECTION
+.body1 {
+  width: 100%;
+  display: flex;
+  height: 900px;
+
+  @include responsive($break-xs) {
+    flex-wrap: wrap;
+    height: 800px;
+  }
+}
+
+.text {
+  background-color: $color-bg-light;
+  width: 50%;
+  text-align: center;
+
+  button {
+    @include button-style();
+
+    @include responsive($break-xs) {
+      width: 150px;
+    }
+  }
+
+  @include responsive($break-xs) {
+    width: 100%;
+    height: 50%;
+  }
+}
+
+.title1 {
+  font-size: 80px;
+  padding-top: 350px;
+  margin-bottom: 20px;
+  font-weight: 300;
+
+  @include responsive($break-sm) {
+    font-size: 60px;
+    padding-top: 150px;
+  }
+
+  @include responsive($break-xs) {
+    font-size: 40px;
+    padding-top: 100px;
+  }
+}
+
+.des {
+  font-size: 20px;
+  margin-bottom: 70px;
+
+  @include responsive($break-xs) {
+    margin-bottom: 50px;
+  }
+}
+
+// IMAGE
+.mainimage {
+  width: 50%;
+
+  img {
+    height: 900px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @include responsive($break-sm) {
+    img {
+      height: 600px;
+    }
+  }
+
+  @include responsive($break-xs) {
+    width: 100%;
+    height: 50%;
+
+    img {
+      height: 400px;
+    }
+  }
+}
+
+// BESTSELLERS
+.bestsellers {
+  @include flex-center(space-between, center);
+  padding: 40px;
+
+  h4 {
+    font-size: 22px;
+    margin: 0;
+  }
+
+  @include responsive($break-xs) {
+    padding: 20px 5px;
+    gap: 10px;
+
+    h4 {
+      font-size: 20px;
+    }
+  }
+}
+
+.viewmore {
+  text-decoration: none;
+  color: $color-black;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @include responsive($break-xs) {
+    font-size: 16px;
+  }
+}
+
+// CATALOGUE
+.catalogue {
+  display: flex;
+}
+
+.catalogueimages {
+  display: flex;
+  width: 100%;
+
+  @include responsive($break-sm) {
+    flex-wrap: wrap;
+  }
+}
+
+.imgbox {
+  position: relative;
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+
+  @include responsive($break-sm) {
+    width: 50%;
+  }
+
+  @include responsive($break-xs) {
+    width: 100%;
+  }
+}
+
+.label {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.rate {
+  font-weight: 600;
+}
