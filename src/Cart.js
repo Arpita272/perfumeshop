@@ -4,7 +4,7 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "./store/cartSlice";
 import { useNavigate } from "react-router-dom";
-import "./Cart.css";
+import "./Cart.scss";
 
 export default function Cart({ isOpen, onClose }) {
   const cartItems = useSelector((state) => state.cart.items);

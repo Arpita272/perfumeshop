@@ -1,5 +1,5 @@
 import React from "react";
-import "./Body.css";
+import "./Body.scss";
 import { Link } from "react-router-dom";
 import { useProducts } from "./useProducts";
 

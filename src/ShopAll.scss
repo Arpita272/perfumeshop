@@ -1,23 +1,28 @@
-.scents-page {
+.shopall-page {
   font-family: Optima, sans-serif;
   margin: 40px;
   padding: 0;
-}
-.scents-page h2 {
-  text-align: center;
+  h2 {
+    text-align: center;
+  }
 }
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
 }
-.imgbox img {
-  width: 500px;
-  height: 500px;
+.imgbox {
+  text-decoration: none;
+  color: black;
+  img {
+    width: 500px;
+    height: 500px;
+  }
+  span {
+    font-weight: bold;
+  }
 }
-.imgbox span {
-  font-weight: bold;
-}
+
 .back {
   text-decoration: none;
   color: black;

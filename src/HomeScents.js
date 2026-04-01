@@ -1,5 +1,5 @@
 import React from "react";
-import "./HomeScents.css";
+import "./HomeScents.scss";
 import { Link } from "react-router-dom";
 import { useProducts } from "./useProducts";
 
